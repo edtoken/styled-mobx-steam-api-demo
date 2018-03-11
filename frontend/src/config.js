@@ -9,7 +9,7 @@
  **/
 export const NODE_ENV = process.env.NODE_ENV;
 
-export const BACKEND_URL = process.env.BACKEND_URL || 'http://localhost:8080'
+export const BACKEND_URL = process.env.BACKEND_URL || "http://localhost:8080";
 
 /**
  * @type {Boolean}

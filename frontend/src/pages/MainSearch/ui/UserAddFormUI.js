@@ -1,8 +1,8 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import styled from "styled-components";
 
-import {FlexRowComponent} from "../../../components/FlexRowComponent";
-import {InfoComponent} from "../../../components/InfoComponent";
+import { FlexRowComponent } from "../../../components/FlexRowComponent";
+import { InfoComponent } from "../../../components/InfoComponent";
 
 const UserAddFormAddInput = styled.input`
   display: block;
@@ -15,9 +15,9 @@ const UserAddFormAddInput = styled.input`
 const UserAddFormAddButton = styled.button`
   margin-left: 1rem;
   ${props => {
-  const styles = props.theme.overrides.MainFormUsersAddButton;
-  return props.disabled ? styles.disabled : styles.root;
-}};
+    const styles = props.theme.overrides.MainFormUsersAddButton;
+    return props.disabled ? styles.disabled : styles.root;
+  }};
 `;
 
 export class UserAddFormUI extends Component {
@@ -40,7 +40,7 @@ export class UserAddFormUI extends Component {
     const error = this._hasError(value);
 
     if (error) {
-      return this.setState({error});
+      return this.setState({ error });
     }
 
     this.props.addUser(value);
@@ -50,7 +50,7 @@ export class UserAddFormUI extends Component {
     const value = this.input.value;
     const error = this._hasError(value);
 
-    this.setState({error: error || undefined});
+    this.setState({ error: error || undefined });
   };
 
   constructor(props) {
@@ -61,8 +61,8 @@ export class UserAddFormUI extends Component {
   }
 
   render() {
-    const {error} = this.state;
-    const {isFetching} = this.props
+    const { error } = this.state;
+    const { isFetching } = this.props;
 
     return (
       <form onSubmit={this._handleSubmit}>
@@ -75,11 +75,11 @@ export class UserAddFormUI extends Component {
           />
 
           <UserAddFormAddButton type="submit" disabled={error || isFetching}>
-            {isFetching ? 'Loading...' : 'Add More'}
+            {isFetching ? "Loading..." : "Add More"}
           </UserAddFormAddButton>
         </FlexRowComponent>
         <small>http://steamcommunity.com/id/xxxxxxx</small>
-        {error && <InfoComponent type="accent" text={error}/>}
+        {error && <InfoComponent type="accent" text={error} />}
       </form>
     );
   }
