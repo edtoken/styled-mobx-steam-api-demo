@@ -1,0 +1,29 @@
+{
+  "name": "frontend",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "local-storage": "^1.4.2",
+    "mobx": "^3.6.1",
+    "mobx-react": "^4.4.3",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-scripts": "1.1.1",
+    "styled-components": "^3.2.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "lint": "./node_modules/eslint/bin/eslint.js --color --ext .js,.jsx src",
+    "lint:fix": "./node_modules/eslint/bin/eslint.js --fix --color --ext .js,.jsx src "
+  },
+  "devDependencies": {
+    "eslint": "^4.18.2",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-jsdoc": "^3.5.0",
+    "eslint-plugin-prettier": "^2.6.0",
+    "eslint-plugin-react-app": "^3.0.0",
+    "prettier": "^1.11.1"
+  }
+}
