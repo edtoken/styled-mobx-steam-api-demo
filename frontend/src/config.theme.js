@@ -1,7 +1,7 @@
 // Base theme constants
 
-import {IS_DEVELOPMENT} from "./config";
-import {createTheme} from "./helpers/Theme";
+import { IS_DEVELOPMENT } from "./config";
+import { createTheme } from "./helpers/Theme";
 
 const PRIMARY_TEXT_COLOR = "#c6d4df";
 const ACCENT_TEXT_COLOR = "rgb(204, 51, 0)";
@@ -69,9 +69,9 @@ export const THEME = createTheme({
     },
     InfoComponent: {
       root: {
-        fontSize: '.8rem'
+        fontSize: ".8rem"
       },
-      error: theme => ({
+      accent: theme => ({
         ...theme.root.InfoComponent.root,
         color: ACCENT_TEXT_COLOR
       })
