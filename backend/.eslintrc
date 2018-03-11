@@ -1,0 +1,29 @@
+{
+  "extends": [
+    "prettier"
+  ],
+  "plugins": [
+    "jsdoc",
+    "prettier"
+  ],
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "env": {
+    "es6": true,
+    "node": true
+  },
+  "rules": {
+    "no-unused-vars": 2,
+    "prettier/prettier": [
+      "error",
+      {
+        "semi": true,
+        "singleQuote": false,
+        "parser": "flow"
+      }
+    ],
+    "require-jsdoc": 2,
+    "valid-jsdoc": 2
+  }
+}
