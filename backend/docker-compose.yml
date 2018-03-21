@@ -21,3 +21,5 @@ services:
         - mobx-steam-db
     volumes:
       - "./server:/usr/src/app/server"
+      - "./.sequelizerc:/usr/src/app/.sequelizerc"
+      - "./package.json:/usr/src/app/package.json"

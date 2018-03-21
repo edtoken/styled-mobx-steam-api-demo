@@ -1,5 +1,5 @@
-import { action, extendObservable } from "mobx";
-import { post } from "../helpers/RestAPI";
+import {action, extendObservable} from "mobx";
+import {post} from "../helpers/RestAPI";
 
 export class UserStore {
   constructor() {
@@ -8,20 +8,22 @@ export class UserStore {
       addUserError: undefined,
 
       users: [],
+
       actions: {
-        addUser: action(name => {
+        addUser: action(url => {
           this.addUserIsFetching = true;
           this.addUserError = undefined;
 
-          post(`users/add`, undefined, { name })
+          post(`/api/user`, undefined, {url})
             .then(resp => {
+              this.users.push(resp.data);
+
               this.addUserIsFetching = false;
               this.addUserError = undefined;
-              this.users.push({ resp });
             })
             .catch(err => {
-              this.addUserIsFetching = false;
               this.addUserError = String(err);
+              this.addUserIsFetching = false;
             });
         })
       }

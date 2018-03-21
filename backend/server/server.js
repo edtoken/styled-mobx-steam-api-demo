@@ -1,7 +1,8 @@
 const config = require("./config");
 const cors = require('cors')
+const registerApis = require('./api')
 
-module.exports = (fastify, db) => {
+module.exports = (fastify) => {
 
   fastify.use(cors())
 
@@ -13,12 +14,13 @@ module.exports = (fastify, db) => {
     reply.send("pong");
   });
 
-  fastify.register(require('./api/users')(fastify, db), {prefix: '/api/user'})
+  registerApis(fastify)
 
   fastify.listen(config.SERVER_PORT, "0.0.0.0", function (err) {
     if (err) {
       throw err;
     }
+
     console.log(`server listening on ${fastify.server.address().port}`);
   });
 

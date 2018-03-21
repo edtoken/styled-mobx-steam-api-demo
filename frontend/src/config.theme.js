@@ -43,7 +43,7 @@ export const THEME = createTheme({
         display: "inline-block",
         borderRadius: "2px",
         padding: "1px 1rem",
-        lineHeight: "1.4rem"
+        lineHeight: "2.5rem"
       },
       primary: theme => ({
         ...theme.root.Button.root,
@@ -54,7 +54,8 @@ export const THEME = createTheme({
         ...theme.root.Button.root
       }),
       disabled: theme => ({
-        ...theme.root.Button.root
+        ...theme.root.Button.root,
+        cursor: "default"
       })
     },
     RowComponent: {

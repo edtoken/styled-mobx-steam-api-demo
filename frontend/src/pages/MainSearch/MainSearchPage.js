@@ -15,6 +15,8 @@ const store = new RootStore();
 const MainSearchPageStyled = styled.section``;
 
 export const MainSearchPage = observer(() => {
+  console.log("store.user.users", store.user.users);
+
   return (
     <MainSearchPageStyled>
       <RowComponent>
@@ -23,8 +25,9 @@ export const MainSearchPage = observer(() => {
             <UserAddFormUI
               isFetching={store.user.addUserIsFetching}
               addUser={store.user.actions.addUser}
+              users={store.user.users}
             />
-            <UsersUI />
+            <UsersUI users={store.user.users} />
           </PaperComponent>
         </FlexRowComponent>
       </RowComponent>
